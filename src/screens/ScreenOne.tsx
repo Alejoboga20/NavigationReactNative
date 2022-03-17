@@ -1,10 +1,19 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { StackScreenProps } from '@react-navigation/stack';
+import { Button, Text, View } from 'react-native';
+import { styles } from '../theme/appTheme';
 
-export const ScreenOne = () => {
+export const ScreenOne = ({ navigation }: ScreenOneProps) => {
   return (
-    <View>
+    <View style={styles.globalMargin}>
       <Text>ScreenOne</Text>
+
+      <Button
+        title="Go Screen Two"
+        onPress={() => navigation.navigate('ScreenTwo')}
+      />
     </View>
   );
 };
+
+interface ScreenOneProps extends StackScreenProps<any, any> {}

@@ -6,7 +6,7 @@ import { styles } from '../theme/appTheme';
 export const ScreenThree = ({ navigation }: ScreenThreeProps) => {
   return (
     <View style={styles.globalMargin}>
-      <Text>ScreenThree</Text>
+      <Text style={styles.title}>ScreenThree</Text>
 
       <Button title="Go Back" onPress={() => navigation.pop()} />
 

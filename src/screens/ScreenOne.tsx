@@ -6,7 +6,7 @@ import { styles } from '../theme/appTheme';
 export const ScreenOne = ({ navigation }: ScreenOneProps) => {
   return (
     <View style={styles.globalMargin}>
-      <Text>ScreenOne</Text>
+      <Text style={styles.title}>ScreenOne</Text>
 
       <Button
         title="Go Screen Two"

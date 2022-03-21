@@ -14,29 +14,33 @@ export const ScreenOne = ({ navigation }: ScreenOneProps) => {
         onPress={() => navigation.navigate('ScreenTwo')}
       />
 
-      <TouchableOpacity
-        onPress={() =>
-          navigation.navigate('PersonScreen', {
-            id: 1,
-            name: 'User',
-          })
-        }>
-        <View>
-          <Text>Navigate with arguments</Text>
-        </View>
-      </TouchableOpacity>
+      <View style={{ flexDirection: 'row' }}>
+        <TouchableOpacity
+          style={{ ...styles.bigButton, backgroundColor: '#5856d6' }}
+          onPress={() =>
+            navigation.navigate('PersonScreen', {
+              id: 1,
+              name: 'User',
+            })
+          }>
+          <View>
+            <Text style={styles.bigButtonText}>User</Text>
+          </View>
+        </TouchableOpacity>
 
-      <TouchableOpacity
-        onPress={() =>
-          navigation.navigate('PersonScreen', {
-            id: 2,
-            name: 'TestingProps',
-          })
-        }>
-        <View>
-          <Text>Navigate with alternative arguments</Text>
-        </View>
-      </TouchableOpacity>
+        <TouchableOpacity
+          style={{ ...styles.bigButton, backgroundColor: '#ff9427' }}
+          onPress={() =>
+            navigation.navigate('PersonScreen', {
+              id: 2,
+              name: 'TestingProps',
+            })
+          }>
+          <View>
+            <Text style={styles.bigButtonText}>Testing</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };

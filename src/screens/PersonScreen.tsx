@@ -4,11 +4,11 @@ import { styles } from '../theme/appTheme';
 import { StackScreenProps } from '@react-navigation/stack';
 
 export const PersonScreen = ({ navigation, route }: PersonScreenProps) => {
-  const params = route.params;
+  const params = route.params as RouteParams;
 
   useEffect(() => {
     navigation.setOptions({
-      title: params!.name,
+      title: params.name,
     });
   }, []);
 
@@ -20,3 +20,8 @@ export const PersonScreen = ({ navigation, route }: PersonScreenProps) => {
 };
 
 interface PersonScreenProps extends StackScreenProps<any, any> {}
+
+interface RouteParams {
+  id: number;
+  name: string;
+}

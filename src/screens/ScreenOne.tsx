@@ -25,6 +25,18 @@ export const ScreenOne = ({ navigation }: ScreenOneProps) => {
           <Text>Navigate with arguments</Text>
         </View>
       </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate('PersonScreen', {
+            id: 2,
+            name: 'TestingProps',
+          })
+        }>
+        <View>
+          <Text>Navigate with alternative arguments</Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 };

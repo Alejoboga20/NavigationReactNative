@@ -1,10 +1,17 @@
-import React from 'react';
-import { StackScreenProps } from '@react-navigation/stack';
-import { Button, Text, View } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import React, { useEffect } from 'react';
+import { Button, Text, TouchableOpacity, View } from 'react-native';
+import { DrawerScreenProps } from '@react-navigation/drawer';
 import { styles } from '../theme/appTheme';
 
 export const ScreenOne = ({ navigation }: ScreenOneProps) => {
+  useEffect(() => {
+    navigation.setOptions({
+      headerLeft: () => (
+        <Button title="Menu" onPress={() => navigation.toggleDrawer()} />
+      ),
+    });
+  }, []);
+
   return (
     <View style={styles.globalMargin}>
       <Text style={styles.title}>ScreenOne</Text>
@@ -45,4 +52,4 @@ export const ScreenOne = ({ navigation }: ScreenOneProps) => {
   );
 };
 
-interface ScreenOneProps extends StackScreenProps<any, any> {}
+interface ScreenOneProps extends DrawerScreenProps<any, any> {}

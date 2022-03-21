@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { Text, View } from 'react-native';
-import { styles } from '../theme/appTheme';
 import { StackScreenProps } from '@react-navigation/stack';
+import { RootStackParams } from '../navigation/StackNavigator';
+import { styles } from '../theme/appTheme';
 
 export const PersonScreen = ({ navigation, route }: PersonScreenProps) => {
-  const params = route.params as RouteParams;
+  const params = route.params;
 
   useEffect(() => {
     navigation.setOptions({
@@ -19,9 +20,5 @@ export const PersonScreen = ({ navigation, route }: PersonScreenProps) => {
   );
 };
 
-interface PersonScreenProps extends StackScreenProps<any, any> {}
-
-interface RouteParams {
-  id: number;
-  name: string;
-}
+interface PersonScreenProps
+  extends StackScreenProps<RootStackParams, 'PersonScreen'> {}

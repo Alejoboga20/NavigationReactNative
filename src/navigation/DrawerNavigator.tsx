@@ -1,5 +1,11 @@
 import React from 'react';
-import { Image, Text, useWindowDimensions, View } from 'react-native';
+import {
+  Image,
+  Text,
+  TouchableOpacity,
+  useWindowDimensions,
+  View,
+} from 'react-native';
 import {
   createDrawerNavigator,
   DrawerContentComponentProps,
@@ -25,9 +31,9 @@ export const DrawerNavigator = () => {
   );
 };
 
-const InternalDrawer = (
-  props: DrawerContentComponentProps<DrawerContentOptions>,
-) => {
+const InternalDrawer = ({
+  navigation,
+}: DrawerContentComponentProps<DrawerContentOptions>) => {
   return (
     <DrawerContentScrollView>
       <View style={styles.avatarContainer}>
@@ -37,6 +43,20 @@ const InternalDrawer = (
           }}
           style={styles.avatar}
         />
+      </View>
+
+      <View style={styles.menuContainer}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('StackNavigator')}
+          style={styles.menuButton}>
+          <Text style={styles.menuText}>Stack Navigation</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={() => navigation.navigate('SettingsScreen')}
+          style={styles.menuButton}>
+          <Text style={styles.menuText}>Settings</Text>
+        </TouchableOpacity>
       </View>
     </DrawerContentScrollView>
   );

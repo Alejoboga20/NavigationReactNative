@@ -33,30 +33,24 @@ export const TopTabNavigator = () => {
       }}
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color, focused }) => {
-          let iconName: React.ReactNode = <></>;
+          let iconName: string = '';
 
           switch (route.name) {
-            case 'Chat':
-              iconName = (
-                <Icon name="airplane-outline" size={30} color="#000" />
-              );
+            case 'ChatScreen':
+              iconName = 'chatbox-ellipses-outline';
               break;
-            case 'Contacts':
-              iconName = (
-                <Icon name="airplane-outline" size={30} color="#000" />
-              );
+            case 'ContactsScreen':
+              iconName = 'people-outline';
               break;
-            case 'Album':
-              iconName = (
-                <Icon name="airplane-outline" size={30} color="#000" />
-              );
+            case 'AlbumsScreen':
+              iconName = 'albums-outline';
               break;
 
             default:
               break;
           }
 
-          return <Text style={{ color }}>{iconName}</Text>;
+          return <Icon name={iconName} size={30} color={color} />;
         },
       })}>
       <Tab.Screen name="ChatScreen" component={ChatScreen} />

@@ -12,7 +12,6 @@ export const TabOneScreen = () => {
       <Text style={styles.title}>Icons</Text>
       <Text>
         <Icon name="airplane-outline" size={30} color="#000" />
-        <Icon name="clip" size={30} color="#000" />
         <Icon name="car-outline" size={30} color="#000" />
       </Text>
     </View>

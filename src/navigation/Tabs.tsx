@@ -3,10 +3,10 @@ import { Platform, Text } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { TabOneScreen } from '../screens/TabOneScreen';
-import { TabTwoScreen } from '../screens/TabTwoScreen';
 import { StackNavigator } from './StackNavigator';
 import { colors } from '../theme/appTheme';
 import { TopTabNavigator } from './TopTabNavigator';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export const Tabs = () => {
   return Platform.OS === 'ios' ? <TabsIOS /> : <TabsAndroid />;
@@ -25,20 +25,20 @@ const TabsAndroid = () => {
 
           switch (route.name) {
             case 'TabOneScreen':
-              iconName = 'T1';
+              iconName = 'bandage-outline';
               break;
             case 'TopTabNavigator':
-              iconName = 'TB';
+              iconName = 'basketball-outline';
               break;
             case 'StackNavigator':
-              iconName = 'ST';
+              iconName = 'bookmarks-outline';
               break;
 
             default:
               break;
           }
 
-          return <Text style={{ color }}>{iconName}</Text>;
+          return <Icon name={iconName} size={30} color={color} />;
         },
       })}>
       <BottomTabAndroid.Screen
@@ -71,20 +71,20 @@ const TabsIOS = () => {
 
           switch (route.name) {
             case 'TabOneScreen':
-              iconName = 'T1';
+              iconName = 'bandage-outline';
               break;
-            case 'TabTwoScreen':
-              iconName = 'T2';
+            case 'TopTabNavigator':
+              iconName = 'basketball-outline';
               break;
             case 'StackNavigator':
-              iconName = 'ST';
+              iconName = 'bookmarks-outline';
               break;
 
             default:
               break;
           }
 
-          return <Text style={{ color }}>{iconName}</Text>;
+          return <Icon name={iconName} size={30} color={color} />;
         },
       })}
       sceneContainerStyle={{

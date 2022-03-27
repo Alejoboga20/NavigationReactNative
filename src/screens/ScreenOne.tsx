@@ -1,13 +1,18 @@
 import React, { useEffect } from 'react';
 import { Button, Text, TouchableOpacity, View } from 'react-native';
 import { DrawerScreenProps } from '@react-navigation/drawer';
-import { styles } from '../theme/appTheme';
+import { styles, colors } from '../theme/appTheme';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export const ScreenOne = ({ navigation }: ScreenOneProps) => {
   useEffect(() => {
     navigation.setOptions({
       headerLeft: () => (
-        <Button title="Menu" onPress={() => navigation.toggleDrawer()} />
+        <TouchableOpacity
+          style={{ marginLeft: 10 }}
+          onPress={() => navigation.toggleDrawer()}>
+          <Icon name="menu-outline" color={colors.primary} size={35} />
+        </TouchableOpacity>
       ),
     });
   }, []);

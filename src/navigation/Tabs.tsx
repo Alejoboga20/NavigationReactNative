@@ -27,8 +27,8 @@ const TabsAndroid = () => {
             case 'TabOneScreen':
               iconName = 'T1';
               break;
-            case 'TabTwoScreen':
-              iconName = 'T2';
+            case 'TopTabNavigator':
+              iconName = 'TB';
               break;
             case 'StackNavigator':
               iconName = 'ST';

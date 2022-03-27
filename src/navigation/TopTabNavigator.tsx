@@ -6,6 +6,7 @@ import { AlbumsScreen } from '../screens/AlbumsScreen';
 import { LogBox, Text } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { colors } from '../theme/appTheme';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 LogBox.ignoreLogs(['Sending']); //Ignoring warnings with sending
 
@@ -32,17 +33,23 @@ export const TopTabNavigator = () => {
       }}
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color, focused }) => {
-          let iconName: string = '';
+          let iconName: React.ReactNode = <></>;
 
           switch (route.name) {
             case 'Chat':
-              iconName = 'CH';
+              iconName = (
+                <Icon name="airplane-outline" size={30} color="#000" />
+              );
               break;
             case 'Contacts':
-              iconName = 'CT';
+              iconName = (
+                <Icon name="airplane-outline" size={30} color="#000" />
+              );
               break;
             case 'Album':
-              iconName = 'AL';
+              iconName = (
+                <Icon name="airplane-outline" size={30} color="#000" />
+              );
               break;
 
             default:

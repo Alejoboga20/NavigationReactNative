@@ -1,4 +1,5 @@
-import React, { createContext } from 'react';
+import React, { createContext, useReducer } from 'react';
+import { authReducer } from './authReducer';
 
 /* 1: Define what information we are going to have */
 
@@ -28,10 +29,12 @@ export const AuthContext = createContext({} as AuthContextProps);
 
 /* 5: Expone provider state component  */
 export const AuthProvider = ({ children }: AuthProviderProps) => {
+  const [authState, dispatch] = useReducer(authReducer, authInitialState);
+
   return (
     <AuthContext.Provider
       value={{
-        authState: authInitialState,
+        authState,
         signIn: () => {},
       }}>
       {children}

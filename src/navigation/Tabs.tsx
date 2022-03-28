@@ -38,7 +38,7 @@ const TabsAndroid = () => {
               break;
           }
 
-          return <Icon name={iconName} size={30} color={color} />;
+          return <Icon name={iconName} size={20} color={color} />;
         },
       })}>
       <BottomTabAndroid.Screen
@@ -84,7 +84,7 @@ const TabsIOS = () => {
               break;
           }
 
-          return <Icon name={iconName} size={30} color={color} />;
+          return <Icon name={iconName} size={20} color={color} />;
         },
       })}
       sceneContainerStyle={{

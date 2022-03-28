@@ -50,7 +50,7 @@ export const TopTabNavigator = () => {
               break;
           }
 
-          return <Icon name={iconName} size={30} color={color} />;
+          return <Icon name={iconName} size={20} color={color} />;
         },
       })}>
       <Tab.Screen name="ChatScreen" component={ChatScreen} />
